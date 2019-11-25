@@ -8,15 +8,15 @@ nav {
     height: 100px;
     background-color: #fff;
 }
-ul {
+nav ul {
     margin-left: 100px;
 
 }
 
-ul li {
+nav ul li {
     list-style: none;
     display: inline-block;
-    float: left;
+    float: none;
     line-height: 100px;
 }
 
@@ -34,3 +34,15 @@ ul li a:hover{
     color: red;
     
 }
+
+.wrapper1{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+
+
+
+
+

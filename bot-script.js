@@ -1,21 +1,33 @@
-var botui = new BotUI('help-bot');
+var botui = new BotUI('my-botui-app');
 
 botui.message.add({
-  delay: 500,
-  loading: true,
-  content: 'Hi! there...',
+  cssClass: 'custom-class',
+  content: "Hi, there!"
+  // delay: 500,
+  // loading: true,
+  // content: 'Hi! there...',
 }).then(function () {
   return botui.message.add({
+    type: 'html',
     delay: 500,
     loading: true,
-    content: 'Ever wonder what its like to be a woman on the internet?'
+    content: '<p style="color:yellow;text-align:center;font-size:50px">👋<p>'
   });}).then(function () {
     return botui.message.add({
-      type: 'html',
-      delay: 500,
+      delay: 600,
       loading: true,
-      content: '<p style="color:yellow;text-align:center;font-size:100px">👋<p>'
-    });
+      content: 'Ever wonder what its like to be a woman on the internet?'
+    });}).then(function () {
+      return botui.message.add({
+        delay: 700,
+        loading: true,
+        content: 'Lets chat about it.....'
+      });}).then(function () {
+        return botui.message.add({
+          delay: 800,
+          loading: true,
+          content: 'Click on the bubbles to move along'
+        });
 
 
 }).then(function () {
@@ -26,10 +38,17 @@ botui.message.add({
         value: 'hello'
       }
     ]
-  });
+  });}).then(function () {
+    return botui.message.add({
+      type: 'html',
+      delay: 800,
+      human: true,
+      content: '<p style="color:yellow;text-align:center;font-size:50px">👋<p>'
+    });
 
 }).then(function (index) {
   return botui.message.add({
+    delay: 1000,
     type: 'embed',
     content: 'https://giphy.com/gifs/brckhmptn-brockhampton-mFZ7zYki7WZEwyDWaU'
   });
@@ -48,18 +67,21 @@ botui.message.add({
         return botui.message.add({
           delay: 1000,
           loading: true,
-          content: 'You can read more about our study inception here:[here](https://medium.com/pollicy/a-survival-guide-to-being-a-woman-on-the-internet-feminist-research-for-a-feminist-internet-e8e76e4ed20f)^'
-        });}).then(function (index) {
-          return botui.message.add({
-            delay: 1000,
-            human: true,
-            content: 'What did you find out!'
+          content: 'You can read more about our study inception here (https://medium.com/pollicy/a-survival-guide-to-being-a-woman-on-the-internet-feminist-research-for-a-feminist-internet-e8e76e4ed20f)'
+        });}).then(function () {
+          return botui.action.button({
+            action: [
+              {
+                text: 'What did you find out.....',
+                value: 'hello'
+              }
+            ]
           });}).then(function () {
             return botui.message.add({
               type: 'html',
-              delay: 500,
+              delay: 800,
               human: true,
-              content: '<p style="color:yellow;text-align:center;font-size:100px">🤔<p>'
+              content: '<p style="color:yellow;text-align:center;font-size:50px">🤔<p>'
             });
         }).then(function (index) {
             return botui.message.add({
@@ -67,6 +89,23 @@ botui.message.add({
               loading: true,
               content: 'Well, at a first glance, it looks like around 27-30% of women have experienced some form of online harassment or violence!'
             });}).then(function () {
+              return botui.message.add({
+                type: 'html',
+                delay: 800,
+                loading: true,
+                content: 'img src="smiley.gif" alt="Smiley face" height="42" width="42">'
+              });
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          }).then(function () {
               return botui.action.button({
                 action: [
                   {
@@ -82,6 +121,7 @@ botui.message.add({
                 var message;
               
                 if (res.value === "more") {
+                  cssClass: 'custom-class',
                   message = 'We conducted quantitative interviews with women in capital cities as well as in-depth interviews with women to put a human face to these numbers.';
                 }
                 else if (res.value === "less") {
@@ -124,45 +164,4 @@ botui.message.add({
     
   
 
-
-
-
-
-
-
-
-
-
-  
-// }).then(function (res) {
-//   var message;
-
-//   if (res.value === "hello") {
-//     message = 'That’s a good one! This is a website, it’s always open.';
-//   }
-//   else if (res.value === "do") {
-//     message = 'I’m a product-focused Scrum master<br><br>I also have a keen interest in chatbots and web analytics';
-//   }
-
-//   return botui.message.add({
-//     type: 'html',
-//     delay: 1000,
-//     loading: true,
-//     content: message
-//   });
-// }).then(function (index) {
-//   return botui.action.button({
-//     action: [
-//       {
-//         text: 'Cool!',
-//         value: 'cool'
-//       }
-//     ]
-//   });
-// }).then(function (index) {
-//   return botui.message.add({
-//     delay: 1000,
-//     loading: true,
-//     content: 'I know! Thanks.'
-//   });
 });
