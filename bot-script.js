@@ -50,7 +50,7 @@ botui.message.add({
   return botui.message.add({
     delay: 1000,
     type: 'embed',
-    content: 'https://giphy.com/gifs/brckhmptn-brockhampton-mFZ7zYki7WZEwyDWaU'
+    content: 'https://media.giphy.com/media/PwxneV13N2cLe/giphy.gif'
   });
 
 }).then(function (index) {
@@ -93,7 +93,7 @@ botui.message.add({
                 type: 'html',
                 delay: 800,
                 loading: true,
-                content: 'img src="smiley.gif" alt="Smiley face" height="42" width="42">'
+                content: '<img src="Chart-01.jpg" alt="Smiley face" height="420" width="420">'
               });
           
           
